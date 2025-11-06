@@ -1,14 +1,24 @@
-#include "C:/Wichtig/System/Static/Container/Graph.h"
+#if defined(__linux__)
+#include "/home/codeleaded/System/Static/Container/Graph.h"
+#elif defined(_WINE)
+#include "/home/codeleaded/System/Static/Container/Graph.h"
+#elif defined(_WIN32)
+#include "F:/home/codeleaded/System/Static/Container/Graph.h"
+#elif defined(__APPLE__)
+#error "Apple not supported!"
+#else
+#error "Platform not supported!"
+#endif
 
 int main(){
 
-    Graph graph = Graph_New(sizeof(int),ADJACENCY_MATRIX);
+    Graph graph = Graph_New(ADJACENCY_MATRIX);
 
-    Graph_Push(&graph,"FIRT");
-    Graph_Push(&graph,"SECD");
-    Graph_Push(&graph,"THID");
-    Graph_Push(&graph,"FORT");
-    Graph_Push(&graph,"FITH");
+    Graph_Push(&graph,"FIRT",sizeof("FIRT"));
+    Graph_Push(&graph,"SECD",sizeof("SECD"));
+    Graph_Push(&graph,"THID",sizeof("THID"));
+    Graph_Push(&graph,"FORT",sizeof("FORT"));
+    Graph_Push(&graph,"FITH",sizeof("FITH"));
 
     Graph_SetEdgeNoDir(&graph,0,1,60);
     Graph_SetEdgeNoDir(&graph,0,2,61);
