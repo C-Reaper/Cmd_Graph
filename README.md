@@ -1,193 +1,41 @@
-# Cmd_Graph
+# Project README
 
+## Overview
+This project is a simple C program that creates and manipulates an adjacency matrix graph. The graph contains nodes labeled "FIRT", "SECD", "THID", "FORT", and "FITH" with various weighted edges between them.
 
-## Project Overview
+## Features
+- Create a new graph using `Graph_New`
+- Add nodes to the graph using `Graph_Push`
+- Set unidirectional edges in the graph using `Graph_SetEdgeNoDir`
+- Print the adjacency matrix of the graph using `Graph_Print`
+- Free the memory allocated for the graph using `Graph_Free`
 
-This project implements specialized functionality related to graph.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for graph
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
-
+## Project Structure
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed in specific projects
 
-### Build Steps
+## Build & Run
+To build and run the project on Linux:
 
-1. Navigate to project directory:
-```bash
-cd Cmd_Graph
-```
+1. Navigate to the project directory.
+2. Use `make -f Makefile.linux all` to compile the program.
+3. Execute with `make -f Makefile.linux exe`.
 
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
+For Windows, use:
+- `make -f Makefile.windows all`
+- `make -f Makefile.windows exe`
 
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
+To build and run on WebAssembly using Emscripten:
 
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
+1. Navigate to the project directory.
+2. Use `make -f Makefile.web all`.
+3. Execute with `make -f Makefile.web exe` followed by `wasmtime $(TARGET)`.
 
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
+For clean rebuild on any platform:
+- Use `make -f Makefile.(os) clean`
+- Followed by `make -f Makefile.(os) all`
 
-## Running the Project
-
-Execute the compiled binary:
-
-```bash
-./build/Main(.exe)
-```
-
-Or using make:
-```bash
-make -f Makefile.(os) exe
-```
-
-## Project Organization
-
-```
-Cmd_Graph/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
-```
-
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+This README provides a clear structure and build instructions for the project, ensuring that users can easily compile and run it.
